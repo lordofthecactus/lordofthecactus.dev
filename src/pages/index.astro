@@ -16,8 +16,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         margin-bottom: 1rem;
       }
 
+      :root {
+        --soft-green: #ddff9e;
+        --soft-blue: #e0ffff;
+        --soft-yellow: #fdff9d;
+        --soft-red: #ffe0e0;
+      }
+
       .shopify {
-        background-color: #ddff9e;
+        background-color: var(--soft-green);
         text-decoration: none;
         padding: 3px;
         color: black;
@@ -25,7 +32,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       }
 
       .yellowme {
-        background-color: #fdff9d;
+        background-color: var(--soft-yellow);
         text-decoration: none;
         padding: 3px;
         color: black;
@@ -33,7 +40,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       }
 
       .hydrogen {
-        background-color: #e0ffff;
+        background-color: var(--soft-blue);
         text-decoration: none;
         padding: 3px;
         color: black;
@@ -41,16 +48,44 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       }
 
       .remix {
-        background-color: rgb(255, 224, 224);
+        background-color: var(--soft-red);
         text-decoration: none;
         padding: 3px;
         color: black;
         text-decoration: underline;
       }
 
-      .daniel {
-        color: white;
+      @-webkit-keyframes colors {
+        0% {
+          background-color: var(--soft-green);
+        }
+        25% {
+          background-color: var(--soft-blue);
+        }
+        50% {
+          background-color: var(--soft-yellow);
+        }
+        75% {
+          background-color: var(--soft-red);
+        }
+        100% {
+          background-color: var(--soft-green);
+        }
+      }
+
+      .blinkdiv {
+        height: 100px;
         background-color: black;
+        -webkit-animation-name: blackWhite;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-duration: 2s;
+      }
+
+      .daniel {
+        color: black;
+        animation-name: colors;
+        animation-iteration-count: infinite;
+        animation-duration: 8s;
         padding: 3px;
       }
     </style>
@@ -82,7 +117,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
           href="https://remix.run/"
           class="remix">Remix</a
         >.
-        <h2>Blog posts</h2>
         <Footer />
       </p>
     </main>
